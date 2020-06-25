@@ -8,13 +8,11 @@ const Issmap=()=>{
 
   const [data,setData]=useState([]);
 
-  const [counter,setCounter]=useState(0)
-
 
   useEffect(()=>{
-    setTimeout(()=>{console.log(counter)
+    setTimeout(()=>{
       fetchFunction()
-  },5000)
+  },10000)
 },[data])
 
   function fetchFunction(){
@@ -32,12 +30,14 @@ const Issmap=()=>{
 
 return(
 <div className='mapdiv'>
+<h3 className="infoHeader">Data polls current position every 10 seconds- two positions required so 20 seconds before line appears</h3>
 <Map  className='darkMap' center={centre} zoom={2} attributionControl={false} zoomControl={false} >
     <TileLayer
     url='https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     />
       <Polyline color="red" positions={data}/>
+
 
 </Map>
 </div>
