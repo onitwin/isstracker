@@ -9,6 +9,7 @@ const Issmap=()=>{
   const [data,setData]=useState([]);
 
 
+
   useEffect(()=>{
     setTimeout(()=>{
       fetchFunction()
@@ -20,8 +21,10 @@ const Issmap=()=>{
     .then(data=>data.json())
     .then(data2=>{
       const coords=[data2.iss_position.latitude,data2.iss_position.longitude]
-       console.log(coords)
+      const otherCoords=[data2.iss_position.longitude,data2.iss_position.latitude]
+       console.table(coords)
     setData([...data,coords])
+    console.table(data)
   })}
 
 
