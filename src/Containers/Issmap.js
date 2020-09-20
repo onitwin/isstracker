@@ -13,7 +13,7 @@ const Issmap=()=>{
   useEffect(()=>{
     setTimeout(()=>{
       fetchFunction()
-  },10000)
+  },5000)
 },[data])
 
 
@@ -34,7 +34,7 @@ const Issmap=()=>{
 
 return(
 <div className='mapdiv'>
-<h3 className="infoHeader">Data polls current position every 10 seconds- two positions required so 20 seconds before line appears</h3>
+<h3 className="infoHeader">Data polls current position every 5 seconds- two positions required so 10 seconds before line appears</h3>
 <Map  className='darkMap' center={centre} zoom={2} attributionControl={false} zoomControl={false} >
     <TileLayer
     url='https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
