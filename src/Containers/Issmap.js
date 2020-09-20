@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from 'react'
-import { Map, Marker, Popup, TileLayer,Polyline } from 'react-leaflet';
-import {Icon} from "leaflet";
+import { Map, TileLayer,Polyline } from 'react-leaflet';
+
 
 
 const Issmap=()=>{
@@ -16,12 +16,13 @@ const Issmap=()=>{
   },10000)
 },[data])
 
+
   function fetchFunction(){
-    fetch("http://api.open-notify.org/iss-now.json")
+    fetch("https://api.wheretheiss.at/v1/satellites/25544")
     .then(data=>data.json())
     .then(data2=>{
-      const coords=[data2.iss_position.latitude,data2.iss_position.longitude]
-      const otherCoords=[data2.iss_position.longitude,data2.iss_position.latitude]
+      const coords=[data2.latitude,data2.longitude]
+      const otherCoords=[data2.longitude,data2.latitude]
        console.table(coords)
     setData([...data,coords])
     console.table(data)
