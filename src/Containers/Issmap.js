@@ -1,5 +1,5 @@
 import React ,{useState,useEffect} from 'react'
-import { Map, TileLayer,Polyline } from 'react-leaflet';
+import { Map,Marker, TileLayer,Polyline } from 'react-leaflet';
 
 
 
@@ -7,6 +7,7 @@ const Issmap=()=>{
   const centre=[40.7128,3.7492]
 
   const [data,setData]=useState([]);
+  const [currentPosition,setCurrentPosition]=useState([10.0000,1.0000])
 
 
 
@@ -22,10 +23,12 @@ const Issmap=()=>{
     .then(data=>data.json())
     .then(data2=>{
       const coords=[data2.latitude,data2.longitude]
-      const otherCoords=[data2.longitude,data2.latitude]
-       console.table(coords)
     setData([...data,coords])
     console.table(data)
+    if(data){
+      setCurrentPosition(coords)
+    }
+
   })}
 
 
@@ -41,9 +44,14 @@ return(
     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     />
       <Polyline color="red" positions={data}/>
+      <Marker position={currentPosition}/>
+
+
+
 
 
 </Map>
+
 </div>
 
 
