@@ -2,6 +2,12 @@ p{
   color: white;
 }
 
+p.popup{
+  color:black;
+  margin:0;
+  padding:0;
+}
+
 h3{
   color: white;
 }
@@ -27,7 +33,7 @@ li{
 
 .leaflet-container {
   width: 94%;
-  height: 60vh;
+  height: 80vh;
 }
 
 .headerDiv{
