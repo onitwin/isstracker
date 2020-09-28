@@ -34,6 +34,7 @@ li{
 .leaflet-container {
   width: 94%;
   height: 80vh;
+  /* border-radius: 50%; */
 }
 
 .headerDiv{

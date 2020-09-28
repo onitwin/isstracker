@@ -5,12 +5,11 @@ import {Icon} from "leaflet"
 
 
 const Issmap=()=>{
+  const centre=[40.7128,3.7492]
 
   const [data,setData]=useState([]);
   const [currentPosition,setCurrentPosition]=useState([10.0000,1.0000])
   const [allData,setAllData]=useState([]);
-
-  const centre=[40.7128,3.7492];
 
 
 
@@ -47,7 +46,7 @@ const Issmap=()=>{
 
 return(
 <div className='mapdiv'>
-<h3 className="infoHeader">Data polls current position once per second</h3>
+<h3 className="infoHeader">Data polls current position </h3>
 <Map  className='darkMap' center={centre} zoom={2} attributionControl={false} zoomControl={false} alt="map">
     <TileLayer
     url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
